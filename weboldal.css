@@ -1,0 +1,317 @@
+/* --- VÁLTOZÓK ÉS SZÍNEK --- */
+:root {
+  /* Zöld és Kék alapok */
+  --primary-blue: #2563eb;
+  --primary-green: #10b981;
+  
+  /* Akcentus színek */
+  --accent-red: #ef4444;     /* Egér ráhúzás / kiemelés */
+  --accent-yellow: #f59e0b;  /* Sárga kiemelés */
+  --accent-purple: #8b5cf6;
+  --accent-pink: #ec4899;
+  --accent-orange: #f97316;
+  --accent-brown: #78350f;
+
+  /* Világos mód (Alapértelmezett) */
+  --bg-main: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Sötét mód stílusok */
+[data-theme="dark"] {
+  --bg-main: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.85);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* --- ALAP BEÁLLÍTÁSOK --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  padding-top: 60px; /* Így a fixált navbar nem takarja el a tartalom tetejét */
+}
+
+/* --- FEJLÉC ÉS GOMBOK --- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: var(--bg-card); /* Háttér hozzáadva, különben a tartalom átlátszik mögötte görgetéskor */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color); /* Finom elválasztó vonal az esztétikáért */
+  z-index: 100;
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 3 vonalas Hamburgermenü (Animált) */
+.hamburger-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 8px;
+  z-index: 101;
+}
+
+.hamburger-btn .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-blue);
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.hamburger-btn:hover .bar {
+  background-color: var(--accent-red); /* Egér ráhúzáskor Piros */
+}
+
+/* Menü ikon animáció nyitáskor (X alakzat) */
+.hamburger-btn.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  background-color: var(--accent-red);
+}
+.hamburger-btn.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+  background-color: var(--accent-red);
+}
+
+.theme-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--primary-green);
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  display: flex; /* Középre zárja az ikont */
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-btn:hover {
+  color: var(--accent-red);
+  transform: scale(1.05);
+}
+
+/* --- SIDEBAR (DASHBOARD MENÜ) --- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  transform: translateX(-100%); /* Reszponzív elrejtés képernyőn kívülre */
+  width: 280px;
+  height: 100%;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid var(--border-color);
+  z-index: 99;
+  padding-top: 80px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow);
+}
+
+.sidebar.open {
+  transform: translateX(0); /* Visszatolja a menüt a képernyőre */
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 25px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+/* Piros kiemelés egér ráhúzáskor */
+.sidebar-nav a:hover {
+  color: var(--accent-red);
+  background: rgba(239, 68, 68, 0.05);
+  border-left-color: var(--accent-red);
+  padding-left: 30px;
+}
+
+.sidebar-nav a.active {
+  color: var(--primary-blue);
+  border-left-color: var(--primary-blue);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 98;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- TARTALOM TERÜLET --- */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.page-section {
+  display: none;
+  width: 100%;
+  max-width: 800px;
+}
+
+.page-section.active {
+  display: block;
+  animation: fadeIn 0.4s ease forwards; /* Csak akkor fut le, ha az aloldal aktívvá válik */
+}
+
+/* Finom, minimalista fade-in animáció */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- KEZDŐLAP PANEL ÉS ÜDVÖZLŐ SZÖVEG --- */
+.welcome-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 60px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.welcome-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  /* Színátmenet: Zöld és Kék kombinációja */
+  background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
+  -webkit-background-clip: text; 
+  background-clip: text;          /* JAVÍTVA: Szabványos verzió a hibajelzések elkerülésére */
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+}
+
+/* KÁRTYÁK MÁS ALOLDALAKON */
+.content-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.content-card h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--primary-blue);
+}
+
+.content-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ELEMEK & BEÁLLÍTÁSOK */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* Gomb tartalma mindig középen legyen */
+  gap: 10px;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-discord {
+  background-color: #5865F2;
+  color: white;
+}
+
+.btn-discord:hover {
+  background-color: var(--accent-red); /* Piros reakció hoverkor */
+  transform: translateY(-2px);
+}
+
+.setting-item {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.custom-select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 1rem;
+  outline: none;
+}
+
+.custom-select:focus {
+  border-color: var(--primary-blue);
+}

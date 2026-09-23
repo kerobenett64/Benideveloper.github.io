@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saját Egyedi Weboldal</title>
+  
+  <!-- FontAwesome Ikonok (CDN) -->
+  <link rel="stylesheet" href="https://cloudflare.com">
+  <!-- CSS Fájl Hivatkozás -->
+  <link rel="stylesheet" href="weboldal.css">
+</head>
+<body>
+
+  <!-- Navigáció & Fejléc -->
+  <header class="navbar">
+    <div class="nav-container">
+      <button id="menu-toggle" class="hamburger-btn" aria-label="Menü nyitása">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <button id="theme-toggle" class="theme-btn" aria-label="Téma váltás">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Oldalsó Dashboard / Menü -->
+  <aside id="sidebar" class="sidebar">
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#home" class="nav-link active" data-section="home"><i class="fa-solid fa-house"></i> <span data-i18n="nav_home">Főoldal</span></a></li>
+        <li><a href="#games" class="nav-link" data-section="games"><i class="fa-solid fa-gamepad"></i> <span data-i18n="nav_games">Játékaim</span></a></li>
+        <li><a href="#server" class="nav-link" data-section="server"><i class="fa-brands fa-discord"></i> <span data-i18n="nav_server">Szerver</span></a></li>
+        <li><a href="#about" class="nav-link" data-section="about"><i class="fa-solid fa-user"></i> <span data-i18n="nav_about">Rólam</span></a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav_contact">Elérhetőségek</span></a></li>
+        <li><a href="#media" class="nav-link" data-section="media"><i class="fa-solid fa-photo-film"></i> <span data-i18n="nav_media">Képek és Videók</span></a></li>
+        <li><a href="#merch" class="nav-link" data-section="merch"><i class="fa-solid fa-shirt"></i> <span data-i18n="nav_merch">Merch</span></a></li>
+        <li><a href="#settings" class="nav-link" data-section="settings"><i class="fa-solid fa-gear"></i> <span data-i18n="nav_settings">Beállítások</span></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Háttér elfedő mobil menü nyitásakor -->
+  <div id="overlay" class="overlay"></div>
+
+  <!-- Fő Tartalom Terület -->
+  <main class="main-content">
+
+    <!-- 1. FŐOLDAL SECTION -->
+    <section id="home" class="page-section active">
+      <div class="welcome-card">
+        <h1 class="welcome-title" data-i18n="welcome_title">Üdvözöllek!!!</h1>
+      </div>
+    </section>
+
+    <!-- 2. JÁTÉKAIM -->
+    <section id="games" class="page-section">
+      <div class="content-card">
+        <h2 data-i18n="nav_games">Játékaim</h2>
+        <p data-i18n="games_desc">Itt találhatók majd a saját fejlesztésű játékaim.</p>
+      </div>
+    </section>
+
+    <!-- 3. SZERVER -->
+    <section id="server" class="page-section">
+      <div class="content-card">
+        <h2 data-i18n="nav_server">Szerver</h2>
+        <p data-i18n="server_desc">Csatlakozz a hivatalos Discord szerverünkhöz!</p>
+        <button class="btn btn-discord"><i class="fa-brands fa-discord"></i> Discord Join</button>
+      </div>
+    </section>
+
+    <!-- 4. RÓLAM -->
+    <section id="about" class="page-section">
+      <div class="content-card">
+        <h2 data-i18n="nav_about">Rólam</h2>
+        <p data-i18n="about_desc">Néhány gondolat rólam, a céljaimról és a projektjeimről.</p>
+      </div>
+    </section>
+
+    <!-- 5. ELÉRHERŐSÉGEK -->
+    <section id="contact" class="page-section">
+      <div class="content-card">
+        <h2 data-i18n="nav_contact">Elérhetőségek</h2>
+        <p data-i18n="contact_desc">Írj nekem üzenetet vagy keress a közösségi médiában!</p>
+      </div>
+    </section>
+
+    <!-- 6. KÉPEK ÉS VIDEÓK -->
+    <section id="media" class="page-section">
+      <div class="content-card">
+        <h2 data-i18n="nav_media">Képek és Videók</h2>
+        <p data-i18n="media_desc">Galéria a legújabb videókból és pillanatképekből.</p>
+      </div>
+    </section>
+
+    <!-- 7. MERCH -->
+    <section id="merch" class="page-section">
+      <div class="content-card">
+        <h2 data-i18n="nav_merch">Merch</h2>
+        <p data-i18n="merch_desc">Nézz szét a hivatalos termékek között!</p>
+      </div>
+    </section>
+
+    <!-- 8. BEÁLLÍTÁSOK -->
+    <section id="settings" class="page-section">
+      <div class="content-card">
+        <h2 data-i18n="nav_settings">Beállítások</h2>
+        <div class="setting-item">
+          <label for="lang-select" data-i18n="lang_label">Nyelv kiválasztása:</label>
+          <select id="lang-select" class="custom-select">
+            <option value="hu">Magyar</option>
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+            <option value="es">Español</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JS Fájl Hivatkozás -->
+  <script src="weboldal.js"></script>
+</body>
+</html>
