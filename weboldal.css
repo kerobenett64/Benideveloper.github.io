@@ -1,18 +1,12 @@
 /* --- VÁLTOZÓK ÉS SZÍNEK --- */
 :root {
-  /* Zöld és Kék alapok */
   --primary-blue: #2563eb;
   --primary-green: #10b981;
-  
-  /* Akcentus színek */
-  --accent-red: #ef4444;     /* Egér ráhúzás / kiemelés */
-  --accent-yellow: #f59e0b;  /* Sárga kiemelés */
+  --accent-red: #ef4444;
+  --accent-yellow: #f59e0b;
   --accent-purple: #8b5cf6;
   --accent-pink: #ec4899;
   --accent-orange: #f97316;
-  --accent-brown: #78350f;
-
-  /* Világos mód (Alapértelmezett) */
   --bg-main: #f8fafc;
   --bg-card: rgba(255, 255, 255, 0.9);
   --text-main: #0f172a;
@@ -21,7 +15,6 @@
   --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
 }
 
-/* Sötét mód stílusok */
 [data-theme="dark"] {
   --bg-main: #0f172a;
   --bg-card: rgba(30, 41, 59, 0.85);
@@ -47,7 +40,83 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  padding-top: 60px; /* Így a fixált navbar nem takarja el a tartalom tetejét */
+  padding-top: 60px;
+}
+
+/* --- INTRO ANIMÁCIÓS KÉPERNYŐ --- */
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+}
+
+.intro-screen.fade-out {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.intro-content {
+  animation: introZoom 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.intro-logo {
+  font-size: 4rem;
+  color: var(--primary-green);
+  margin-bottom: 20px;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.intro-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.intro-subtitle {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+.intro-btn {
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.intro-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.8);
+}
+
+@keyframes introZoom {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
 /* --- FEJLÉC ÉS GOMBOK --- */
@@ -60,9 +129,9 @@ body {
   display: flex;
   align-items: center;
   padding: 0 20px;
-  background: var(--bg-card); /* Háttér hozzáadva, különben a tartalom átlátszik mögötte görgetéskor */
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color); /* Finom elválasztó vonal az esztétikáért */
+  border-bottom: 1px solid var(--border-color);
   z-index: 100;
 }
 
@@ -73,7 +142,16 @@ body {
   align-items: center;
 }
 
-/* 3 vonalas Hamburgermenü (Animált) */
+.brand-logo {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.brand-logo span {
+  color: var(--primary-blue);
+}
+
 .hamburger-btn {
   background: transparent;
   border: none;
@@ -95,10 +173,9 @@ body {
 }
 
 .hamburger-btn:hover .bar {
-  background-color: var(--accent-red); /* Egér ráhúzáskor Piros */
+  background-color: var(--accent-red);
 }
 
-/* Menü ikon animáció nyitáskor (X alakzat) */
 .hamburger-btn.active .bar:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
   background-color: var(--accent-red);
@@ -120,7 +197,7 @@ body {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: var(--shadow);
-  display: flex; /* Középre zárja az ikont */
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -135,7 +212,7 @@ body {
   position: fixed;
   top: 0;
   left: 0; 
-  transform: translateX(-100%); /* Reszponzív elrejtés képernyőn kívülre */
+  transform: translateX(-100%);
   width: 280px;
   height: 100%;
   background: var(--bg-card);
@@ -148,7 +225,7 @@ body {
 }
 
 .sidebar.open {
-  transform: translateX(0); /* Visszatolja a menüt a képernyőre */
+  transform: translateX(0);
 }
 
 .sidebar-nav ul {
@@ -167,7 +244,6 @@ body {
   transition: all 0.2s ease;
 }
 
-/* Piros kiemelés egér ráhúzáskor */
 .sidebar-nav a:hover {
   color: var(--accent-red);
   background: rgba(239, 68, 68, 0.05);
@@ -213,10 +289,9 @@ body {
 
 .page-section.active {
   display: block;
-  animation: fadeIn 0.4s ease forwards; /* Csak akkor fut le, ha az aloldal aktívvá válik */
+  animation: fadeIn 0.4s ease forwards;
 }
 
-/* Finom, minimalista fade-in animáció */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -242,12 +317,17 @@ body {
 .welcome-title {
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 800;
-  /* Színátmenet: Zöld és Kék kombinációja */
   background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
   -webkit-background-clip: text; 
-  background-clip: text;          /* JAVÍTVA: Szabványos verzió a hibajelzések elkerülésére */
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -1px;
+}
+
+.welcome-subtext {
+  margin-top: 15px;
+  color: var(--text-muted);
+  font-size: 1.1rem;
 }
 
 /* KÁRTYÁK MÁS ALOLDALAKON */
@@ -274,7 +354,7 @@ body {
 .btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center; /* Gomb tartalma mindig középen legyen */
+  justify-content: center;
   gap: 10px;
   margin-top: 20px;
   padding: 12px 24px;
@@ -291,7 +371,7 @@ body {
 }
 
 .btn-discord:hover {
-  background-color: var(--accent-red); /* Piros reakció hoverkor */
+  background-color: var(--accent-red);
   transform: translateY(-2px);
 }
 
@@ -314,4 +394,80 @@ body {
 
 .custom-select:focus {
   border-color: var(--primary-blue);
+}
+
+/* =========================================================
+   MEDIA QUERIES (KÜLÖN TELEFON ÉS ASZTALI KIJELZŐ STÍLUSOK)
+   ========================================================= */
+
+/* --- MOBIL NÉZET (ÁLLÓ NÉZET - Max 768px) --- */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  body {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 80vh;
+    top: auto;
+    bottom: 0;
+    border-radius: 25px 25px 0 0;
+    transform: translateY(100%);
+    padding-top: 30px;
+  }
+
+  .sidebar.open {
+    transform: translateY(0);
+  }
+
+  .welcome-card, .content-card {
+    padding: 30px 20px;
+    border-radius: 15px;
+  }
+
+  .welcome-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* --- MOBIL NÉZET (FEKVŐ NÉZET - Portrait/Landscape váltás) --- */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .navbar {
+    height: 45px;
+  }
+
+  body {
+    padding-top: 45px;
+  }
+
+  .sidebar {
+    padding-top: 55px;
+    width: 240px;
+  }
+
+  .sidebar-nav a {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .welcome-card, .content-card {
+    padding: 20px;
+  }
+
+  .welcome-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* --- ASZTALI NÉZET / DESKTOP (Min 1024px) --- */
+@media screen and (min-width: 1024px) {
+  .welcome-card, .content-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .welcome-card:hover, .content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15);
+  }
 }

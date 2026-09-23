@@ -6,6 +6,16 @@ const savedLanguage = localStorage.getItem('language') || 'hu';
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // --- INTRO SCREEN KEZELÉS ---
+  const introScreen = document.getElementById('intro-screen');
+  const introBtn = document.getElementById('intro-btn');
+
+  if (introBtn && introScreen) {
+    introBtn.addEventListener('click', () => {
+      introScreen.classList.add('fade-out');
+    });
+  }
+
   // --- 2. SÖTÉT / VILÁGOS MÓD GOMB KEZELÉSE ---
   const themeToggleBtn = document.getElementById('theme-toggle');
   
@@ -167,11 +177,13 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('language', lang);
   }
 
-  langSelect.value = savedLanguage;
-  updateLanguage(savedLanguage);
+  if (langSelect) {
+    langSelect.value = savedLanguage;
+    updateLanguage(savedLanguage);
 
-  langSelect.addEventListener('change', (e) => {
-    updateLanguage(e.target.value);
-  });
+    langSelect.addEventListener('change', (e) => {
+      updateLanguage(e.target.value);
+    });
+  }
 
 });
