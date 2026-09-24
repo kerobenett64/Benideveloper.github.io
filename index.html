@@ -2,10 +2,17 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
+  >
 
   <meta name="theme-color" content="#0b1020">
-  <meta name="description" content="Benideveloper — játékok, projektek, közösség és média.">
+  <meta
+    name="description"
+    content="Benideveloper — játékok, projektek, közösség és média."
+  >
 
   <title>Benideveloper</title>
 
@@ -24,6 +31,7 @@
   <!-- =========================================================
        AMBIENT HÁTTÉR
   ========================================================== -->
+
   <div class="background-effects" aria-hidden="true">
     <span class="ambient-orb orb-1"></span>
     <span class="ambient-orb orb-2"></span>
@@ -38,16 +46,16 @@
 
 
   <!-- =========================================================
-       INTRO SCREEN
+       INTRO
   ========================================================== -->
+
   <div id="intro-screen" class="intro-screen">
-    <div class="intro-grid"></div>
+    <div class="intro-grid" aria-hidden="true"></div>
 
     <div class="intro-content">
 
-      <div class="intro-icon-wrap" aria-hidden="true">
-        <div class="intro-icon-rocket">🚀</div>
-        <div class="intro-icon-watermelon">🍉</div>
+      <div class="intro-watermelon" aria-hidden="true">
+        🍉
       </div>
 
       <div class="intro-line"></div>
@@ -65,7 +73,10 @@
         class="intro-btn pressable"
         type="button"
       >
-        <span data-i18n="intro_button">Belépés az oldalra</span>
+        <span data-i18n="intro_button">
+          Belépés az oldalra
+        </span>
+
         <i class="fa-solid fa-arrow-right"></i>
       </button>
 
@@ -74,13 +85,13 @@
 
 
   <!-- =========================================================
-       FEJLÉC
+       NAVBAR
   ========================================================== -->
+
   <header class="navbar">
 
     <div class="nav-container">
 
-      <!-- Bal oldal -->
       <button
         id="menu-toggle"
         class="hamburger-btn pressable"
@@ -95,7 +106,6 @@
       </button>
 
 
-      <!-- Középső brand -->
       <button
         id="home-brand"
         class="brand-logo pressable"
@@ -106,7 +116,6 @@
       </button>
 
 
-      <!-- Jobb oldal -->
       <button
         id="theme-toggle"
         class="theme-btn pressable"
@@ -118,27 +127,37 @@
       </button>
 
     </div>
+
   </header>
 
 
   <!-- =========================================================
-       SIDEBAR / DASHBOARD
+       SIDEBAR
   ========================================================== -->
+
   <aside id="sidebar" class="sidebar">
 
     <div class="sidebar-top">
+
       <div class="sidebar-mini-brand">
         <span>Beni</span>developer
       </div>
 
       <div class="sidebar-status">
         <span class="status-dot"></span>
-        <span data-i18n="status_online">Online</span>
+        <span data-i18n="status_online">
+          Online
+        </span>
       </div>
+
     </div>
 
 
-    <nav class="sidebar-nav" aria-label="Fő navigáció">
+    <nav
+      class="sidebar-nav"
+      aria-label="Fő navigáció"
+    >
+
       <ul>
 
         <li>
@@ -150,9 +169,13 @@
             <span class="nav-icon">
               <i class="fa-solid fa-house"></i>
             </span>
-            <span data-i18n="nav_home">Főoldal</span>
+
+            <span data-i18n="nav_home">
+              Főoldal
+            </span>
           </a>
         </li>
+
 
         <li>
           <a
@@ -163,9 +186,13 @@
             <span class="nav-icon">
               <i class="fa-solid fa-gamepad"></i>
             </span>
-            <span data-i18n="nav_games">Játékaim</span>
+
+            <span data-i18n="nav_games">
+              Játékaim
+            </span>
           </a>
         </li>
+
 
         <li>
           <a
@@ -176,9 +203,13 @@
             <span class="nav-icon">
               <i class="fa-brands fa-discord"></i>
             </span>
-            <span data-i18n="nav_server">Szerver</span>
+
+            <span data-i18n="nav_server">
+              Szerver
+            </span>
           </a>
         </li>
+
 
         <li>
           <a
@@ -189,9 +220,13 @@
             <span class="nav-icon">
               <i class="fa-solid fa-user"></i>
             </span>
-            <span data-i18n="nav_about">Rólam</span>
+
+            <span data-i18n="nav_about">
+              Rólam
+            </span>
           </a>
         </li>
+
 
         <li>
           <a
@@ -202,9 +237,13 @@
             <span class="nav-icon">
               <i class="fa-solid fa-envelope"></i>
             </span>
-            <span data-i18n="nav_contact">Elérhetőségek</span>
+
+            <span data-i18n="nav_contact">
+              Elérhetőségek
+            </span>
           </a>
         </li>
+
 
         <li>
           <a
@@ -215,9 +254,13 @@
             <span class="nav-icon">
               <i class="fa-solid fa-photo-film"></i>
             </span>
-            <span data-i18n="nav_media">Képek és Videók</span>
+
+            <span data-i18n="nav_media">
+              Képek és Videók
+            </span>
           </a>
         </li>
+
 
         <li>
           <a
@@ -228,9 +271,13 @@
             <span class="nav-icon">
               <i class="fa-solid fa-shirt"></i>
             </span>
-            <span data-i18n="nav_merch">Merch</span>
+
+            <span data-i18n="nav_merch">
+              Merch
+            </span>
           </a>
         </li>
+
 
         <li>
           <a
@@ -241,11 +288,15 @@
             <span class="nav-icon">
               <i class="fa-solid fa-gear"></i>
             </span>
-            <span data-i18n="nav_settings">Beállítások</span>
+
+            <span data-i18n="nav_settings">
+              Beállítások
+            </span>
           </a>
         </li>
 
       </ul>
+
     </nav>
 
 
@@ -258,19 +309,31 @@
 
 
   <!-- Mobil overlay -->
-  <div id="overlay" class="overlay"></div>
+
+  <div
+    id="overlay"
+    class="overlay"
+    aria-hidden="true"
+  ></div>
 
 
   <!-- =========================================================
        FŐ TARTALOM
   ========================================================== -->
+
   <main class="main-content">
 
 
     <!-- =======================================================
          HOME
     ======================================================== -->
-    <section id="home" class="page-section active">
+
+    <section
+      id="home"
+      class="page-section active"
+    >
+
+      <!-- HERO -->
 
       <div class="hero-card">
 
@@ -278,83 +341,154 @@
 
         <div class="hero-badge">
           <span class="status-dot"></span>
-          <span data-i18n="hero_badge">Üdv a dashboardon</span>
+
+          <span data-i18n="hero_badge">
+            Üdv a dashboardon
+          </span>
         </div>
 
-        <div class="hero-emoji" aria-hidden="true">
+
+        <div
+          class="hero-emoji"
+          aria-hidden="true"
+        >
           🍉
         </div>
 
-        <h1 class="hero-title" data-i18n="welcome_title">
+
+        <h1
+          class="hero-title"
+          data-i18n="welcome_title"
+        >
           Üdvözöllek!!!
         </h1>
 
-        <p class="hero-description" data-i18n="welcome_description">
-          Fedezd fel a projektjeimet, játékaimat, médiáimat
-          és csatlakozz a közösséghez.
+
+        <p
+          class="hero-description"
+          data-i18n="welcome_description"
+        >
+          Fedezd fel a projektjeimet, játékaimat,
+          médiáimat és az oldalon található újdonságokat.
         </p>
 
+      </div>
 
-        <div class="hero-actions">
 
-          <a
-            class="btn btn-primary pressable"
-            href="https://discord.gg/RTManUMTuT"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-discord"></i>
-            <span data-i18n="join_discord">Csatlakozás a Discordhoz</span>
-          </a>
+      <!-- ===================================================
+           ÚJDONSÁGOK
+      ==================================================== -->
 
-          <button
-            id="hero-games-btn"
-            class="btn btn-secondary pressable"
-            type="button"
-          >
-            <i class="fa-solid fa-gamepad"></i>
-            <span data-i18n="view_games">Játékaim</span>
-          </button>
+      <div class="news-section">
+
+        <div class="section-title-row">
+
+          <div>
+            <span
+              class="section-overline"
+              data-i18n="news_overline"
+            >
+              LATEST
+            </span>
+
+            <h2 data-i18n="news_title">
+              Újdonságok
+            </h2>
+          </div>
+
+          <div class="section-title-icon">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
 
         </div>
 
 
-        <div class="hero-stats">
+        <div class="news-grid">
 
-          <div class="mini-stat">
-            <span class="mini-stat-icon">
-              <i class="fa-solid fa-gamepad"></i>
-            </span>
+          <article class="news-card">
 
-            <div>
-              <strong>Games</strong>
-              <span data-i18n="coming_soon">Hamarosan</span>
+            <div class="news-card-top">
+
+              <div class="news-icon blue">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+
+              <span
+                class="news-tag"
+                data-i18n="news_new"
+              >
+                ÚJ
+              </span>
+
             </div>
-          </div>
+
+            <h3 data-i18n="news_1_title">
+              Megújult weboldal
+            </h3>
+
+            <p data-i18n="news_1_desc">
+              A Benideveloper oldal új, modernebb
+              és mobilbarátabb felületet kapott.
+            </p>
+
+          </article>
 
 
-          <div class="mini-stat">
-            <span class="mini-stat-icon">
-              <i class="fa-brands fa-discord"></i>
-            </span>
+          <article class="news-card">
 
-            <div>
-              <strong>Discord</strong>
-              <span data-i18n="community_ready">Közösség</span>
+            <div class="news-card-top">
+
+              <div class="news-icon purple">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+
+              <span
+                class="news-tag"
+                data-i18n="news_status"
+              >
+                FOLYAMATBAN
+              </span>
+
             </div>
-          </div>
+
+            <h3 data-i18n="news_2_title">
+              Új projektek
+            </h3>
+
+            <p data-i18n="news_2_desc">
+              Új játékok és kreatív projektek készülnek.
+            </p>
+
+          </article>
 
 
-          <div class="mini-stat">
-            <span class="mini-stat-icon">
-              <i class="fa-brands fa-youtube"></i>
-            </span>
+          <article class="news-card">
 
-            <div>
-              <strong>YouTube</strong>
-              <span data-i18n="coming_soon">Hamarosan</span>
+            <div class="news-card-top">
+
+              <div class="news-icon green">
+                <i class="fa-solid fa-photo-film"></i>
+              </div>
+
+              <span
+                class="news-tag"
+                data-i18n="news_coming"
+              >
+                HAMAROSAN
+              </span>
+
             </div>
-          </div>
+
+            <h3 data-i18n="news_3_title">
+              Új tartalmak
+            </h3>
+
+            <p data-i18n="news_3_desc">
+              Képek, videók és további tartalmak
+              fokozatosan kerülnek fel az oldalra.
+            </p>
+
+          </article>
 
         </div>
 
@@ -366,72 +500,47 @@
     <!-- =======================================================
          GAMES
     ======================================================== -->
-    <section id="games" class="page-section">
 
-      <div class="content-card">
+    <section
+      id="games"
+      class="page-section"
+    >
+
+      <div class="content-card placeholder-card">
 
         <div class="section-heading">
+
           <div class="section-icon blue">
             <i class="fa-solid fa-gamepad"></i>
           </div>
 
           <div>
-            <span class="section-overline" data-i18n="section_overline">
-              DASHBOARD
+            <span class="section-overline">
+              PROJECTS
             </span>
-            <h2 data-i18n="nav_games">Játékaim</h2>
+
+            <h2 data-i18n="nav_games">
+              Játékaim
+            </h2>
           </div>
+
         </div>
 
 
-        <p data-i18n="games_desc">
-          Itt kapnak majd helyet a saját fejlesztésű játékaim,
-          projektjeim és azok bemutatói.
-        </p>
+        <div class="status-placeholder">
 
+          <div class="status-placeholder-icon">
+            <i class="fa-solid fa-hammer"></i>
+          </div>
 
-        <div class="project-grid">
+          <strong data-i18n="in_progress">
+            Készítés folyamatban.
+          </strong>
 
-          <article class="project-card">
-            <div class="project-icon">
-              <i class="fa-solid fa-cubes"></i>
-            </div>
-
-            <div>
-              <h3 data-i18n="project_1_title">
-                Első projekt
-              </h3>
-
-              <p data-i18n="project_1_desc">
-                Hamarosan részletes bemutató.
-              </p>
-            </div>
-
-            <span class="project-tag" data-i18n="coming_soon">
-              Hamarosan
-            </span>
-          </article>
-
-
-          <article class="project-card">
-            <div class="project-icon">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
-            </div>
-
-            <div>
-              <h3 data-i18n="project_2_title">
-                Következő játék
-              </h3>
-
-              <p data-i18n="project_2_desc">
-                Fejlesztés alatt.
-              </p>
-            </div>
-
-            <span class="project-tag" data-i18n="in_development">
-              Fejlesztés alatt
-            </span>
-          </article>
+          <span data-i18n="games_desc">
+            A játékok és projektek bemutatója
+            később lesz elérhető.
+          </span>
 
         </div>
 
@@ -443,19 +552,30 @@
     <!-- =======================================================
          SERVER
     ======================================================== -->
-    <section id="server" class="page-section">
+
+    <section
+      id="server"
+      class="page-section"
+    >
 
       <div class="content-card">
 
         <div class="section-heading">
+
           <div class="section-icon discord">
             <i class="fa-brands fa-discord"></i>
           </div>
 
           <div>
-            <span class="section-overline">COMMUNITY</span>
-            <h2 data-i18n="nav_server">Szerver</h2>
+            <span class="section-overline">
+              COMMUNITY
+            </span>
+
+            <h2 data-i18n="nav_server">
+              Szerver
+            </h2>
           </div>
+
         </div>
 
 
@@ -471,13 +591,19 @@
             <i class="fa-brands fa-discord"></i>
           </div>
 
+
           <div class="discord-panel-content">
-            <h3>Discord</h3>
+
+            <h3>
+              Discord
+            </h3>
 
             <span>
               discord.gg/RTManUMTuT
             </span>
+
           </div>
+
 
           <a
             class="btn btn-discord pressable"
@@ -494,36 +620,6 @@
 
         </div>
 
-
-        <div class="social-grid">
-
-          <a
-            href="https://discord.gg/RTManUMTuT"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="social-card pressable"
-          >
-            <i class="fa-brands fa-discord"></i>
-            <span>Discord</span>
-            <small data-i18n="available_now">Elérhető</small>
-          </a>
-
-
-          <div class="social-card disabled-card">
-            <i class="fa-brands fa-youtube"></i>
-            <span>YouTube</span>
-            <small data-i18n="coming_soon">Hamarosan</small>
-          </div>
-
-
-          <div class="social-card disabled-card">
-            <i class="fa-solid fa-envelope"></i>
-            <span data-i18n="contact_label">Kapcsolat</span>
-            <small data-i18n="coming_soon">Hamarosan</small>
-          </div>
-
-        </div>
-
       </div>
 
     </section>
@@ -532,41 +628,47 @@
     <!-- =======================================================
          ABOUT
     ======================================================== -->
-    <section id="about" class="page-section">
 
-      <div class="content-card">
+    <section
+      id="about"
+      class="page-section"
+    >
+
+      <div class="content-card placeholder-card">
 
         <div class="section-heading">
+
           <div class="section-icon green">
             <i class="fa-solid fa-user"></i>
           </div>
 
           <div>
-            <span class="section-overline">PROFILE</span>
-            <h2 data-i18n="nav_about">Rólam</h2>
+            <span class="section-overline">
+              PROFILE
+            </span>
+
+            <h2 data-i18n="nav_about">
+              Rólam
+            </h2>
           </div>
+
         </div>
 
 
-        <p data-i18n="about_desc">
-          Ide kerülhet majd a bemutatkozásom, a céljaim,
-          az érdeklődési köreim és a projektjeim története.
-        </p>
+        <div class="status-placeholder">
 
-
-        <div class="about-highlight">
-
-          <div class="about-icon">
-            🚀
+          <div class="status-placeholder-icon green-bg">
+            <i class="fa-solid fa-user-gear"></i>
           </div>
 
-          <div>
-            <strong>Benideveloper</strong>
+          <strong data-i18n="in_progress">
+            Készítés folyamatban.
+          </strong>
 
-            <p data-i18n="about_quote">
-              Játékok, kreatív projektek, technológia és ötletek.
-            </p>
-          </div>
+          <span data-i18n="about_desc">
+            A bemutatkozás és további információk
+            később lesznek elérhetők.
+          </span>
 
         </div>
 
@@ -578,29 +680,43 @@
     <!-- =======================================================
          CONTACT
     ======================================================== -->
-    <section id="contact" class="page-section">
+
+    <section
+      id="contact"
+      class="page-section"
+    >
 
       <div class="content-card">
 
         <div class="section-heading">
+
           <div class="section-icon purple">
             <i class="fa-solid fa-envelope"></i>
           </div>
 
           <div>
-            <span class="section-overline">CONNECT</span>
-            <h2 data-i18n="nav_contact">Elérhetőségek</h2>
+            <span class="section-overline">
+              CONNECT
+            </span>
+
+            <h2 data-i18n="nav_contact">
+              Elérhetőségek
+            </h2>
           </div>
+
         </div>
 
 
         <p data-i18n="contact_desc">
-          Hamarosan itt lesznek elérhetők a különböző
-          közösségi oldalaim és kapcsolatfelvételi lehetőségeim.
+          Itt találod majd a különböző
+          kapcsolatfelvételi lehetőségeket.
         </p>
 
 
         <div class="contact-grid">
+
+
+          <!-- Discord -->
 
           <a
             href="https://discord.gg/RTManUMTuT"
@@ -608,38 +724,69 @@
             rel="noopener noreferrer"
             class="contact-card pressable"
           >
+
             <div class="contact-icon discord-icon">
               <i class="fa-brands fa-discord"></i>
             </div>
 
             <div>
-              <strong>Discord</strong>
-              <span data-i18n="available_now">Elérhető</span>
+              <strong>
+                Discord
+              </strong>
+
+              <span data-i18n="available_now">
+                Elérhető
+              </span>
             </div>
+
+            <i class="fa-solid fa-arrow-up-right-from-square contact-arrow"></i>
+
           </a>
 
 
-          <div class="contact-card disabled-card">
-            <div class="contact-icon youtube-icon">
-              <i class="fa-brands fa-youtube"></i>
-            </div>
-
-            <div>
-              <strong>YouTube</strong>
-              <span data-i18n="coming_soon">Hamarosan</span>
-            </div>
-          </div>
-
+          <!-- Gmail -->
 
           <div class="contact-card disabled-card">
+
             <div class="contact-icon email-icon">
               <i class="fa-solid fa-envelope"></i>
             </div>
 
             <div>
-              <strong data-i18n="contact_label">Kapcsolat</strong>
-              <span data-i18n="coming_soon">Hamarosan</span>
+              <strong>
+                Gmail
+              </strong>
+
+              <span data-i18n="in_progress">
+                Készítés folyamatban.
+              </span>
             </div>
+
+            <i class="fa-solid fa-clock contact-arrow"></i>
+
+          </div>
+
+
+          <!-- YouTube -->
+
+          <div class="contact-card disabled-card">
+
+            <div class="contact-icon youtube-icon">
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+
+            <div>
+              <strong>
+                YouTube
+              </strong>
+
+              <span data-i18n="in_progress">
+                Készítés folyamatban.
+              </span>
+            </div>
+
+            <i class="fa-solid fa-clock contact-arrow"></i>
+
           </div>
 
         </div>
@@ -652,40 +799,88 @@
     <!-- =======================================================
          MEDIA
     ======================================================== -->
-    <section id="media" class="page-section">
+
+    <section
+      id="media"
+      class="page-section"
+    >
 
       <div class="content-card">
 
         <div class="section-heading">
+
           <div class="section-icon orange">
             <i class="fa-solid fa-photo-film"></i>
           </div>
 
           <div>
-            <span class="section-overline">MEDIA</span>
-            <h2 data-i18n="nav_media">Képek és Videók</h2>
+            <span class="section-overline">
+              MEDIA
+            </span>
+
+            <h2 data-i18n="nav_media">
+              Képek és Videók
+            </h2>
           </div>
+
         </div>
 
 
         <p data-i18n="media_desc">
-          Ide kerülhet majd a galéria, videók,
-          képek és projektbemutatók.
+          Képek, videók és projektbemutatók
+          helye.
         </p>
 
 
-        <div class="media-placeholder">
+        <!-- YouTube panel -->
 
-          <div class="media-placeholder-icon">
+        <div class="youtube-panel">
+
+          <div class="youtube-panel-icon">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+
+
+          <div class="youtube-panel-content">
+
+            <span class="youtube-label">
+              YouTube
+            </span>
+
+            <h3 data-i18n="youtube_title">
+              YouTube csatorna
+            </h3>
+
+            <p data-i18n="youtube_desc">
+              A csatorna és a videós tartalmak
+              készítés alatt állnak.
+            </p>
+
+          </div>
+
+
+          <span
+            class="coming-pill"
+            data-i18n="in_progress"
+          >
+            Készítés folyamatban.
+          </span>
+
+        </div>
+
+
+        <div class="status-placeholder media-placeholder">
+
+          <div class="status-placeholder-icon orange-bg">
             <i class="fa-solid fa-images"></i>
           </div>
 
           <strong data-i18n="media_soon_title">
-            A galéria készül
+            A galéria készítés alatt áll.
           </strong>
 
-          <span data-i18n="coming_soon">
-            Hamarosan
+          <span data-i18n="in_progress">
+            Készítés folyamatban.
           </span>
 
         </div>
@@ -698,40 +893,46 @@
     <!-- =======================================================
          MERCH
     ======================================================== -->
-    <section id="merch" class="page-section">
 
-      <div class="content-card">
+    <section
+      id="merch"
+      class="page-section"
+    >
+
+      <div class="content-card placeholder-card">
 
         <div class="section-heading">
+
           <div class="section-icon pink">
             <i class="fa-solid fa-shirt"></i>
           </div>
 
           <div>
-            <span class="section-overline">STORE</span>
-            <h2 data-i18n="nav_merch">Merch</h2>
+            <span class="section-overline">
+              STORE
+            </span>
+
+            <h2 data-i18n="nav_merch">
+              Merch
+            </h2>
           </div>
+
         </div>
 
 
-        <p data-i18n="merch_desc">
-          A hivatalos termékek, ruhák és egyéb tárgyak
-          később itt lesznek elérhetők.
-        </p>
+        <div class="status-placeholder">
 
-
-        <div class="media-placeholder">
-
-          <div class="media-placeholder-icon">
+          <div class="status-placeholder-icon pink-bg">
             <i class="fa-solid fa-shirt"></i>
           </div>
 
-          <strong data-i18n="merch_soon_title">
-            A merch rész készül
+          <strong data-i18n="in_progress">
+            Készítés folyamatban.
           </strong>
 
-          <span data-i18n="coming_soon">
-            Hamarosan
+          <span data-i18n="merch_desc">
+            A hivatalos termékek és egyéb
+            tárgyak később lesznek elérhetők.
           </span>
 
         </div>
@@ -744,19 +945,30 @@
     <!-- =======================================================
          SETTINGS
     ======================================================== -->
-    <section id="settings" class="page-section">
+
+    <section
+      id="settings"
+      class="page-section"
+    >
 
       <div class="content-card">
 
         <div class="section-heading">
+
           <div class="section-icon slate">
             <i class="fa-solid fa-gear"></i>
           </div>
 
           <div>
-            <span class="section-overline">SYSTEM</span>
-            <h2 data-i18n="nav_settings">Beállítások</h2>
+            <span class="section-overline">
+              SYSTEM
+            </span>
+
+            <h2 data-i18n="nav_settings">
+              Beállítások
+            </h2>
           </div>
+
         </div>
 
 
@@ -769,6 +981,7 @@
             </div>
 
             <div>
+
               <strong data-i18n="language_title">
                 Nyelv
               </strong>
@@ -776,12 +989,14 @@
               <span data-i18n="language_description">
                 Válaszd ki az oldal nyelvét.
               </span>
+
             </div>
 
           </div>
 
 
-          <!-- Egyedi nyelvválasztó -->
+          <!-- NYELVVÁLASZTÓ -->
+
           <div
             id="language-picker"
             class="language-picker"
@@ -796,11 +1011,15 @@
             >
 
               <span class="language-current">
-                <span id="language-flag">🇭🇺</span>
+
+                <span id="language-flag">
+                  🇭🇺
+                </span>
 
                 <span id="language-name">
                   Magyar
                 </span>
+
               </span>
 
               <i class="fa-solid fa-chevron-down"></i>
@@ -820,6 +1039,7 @@
                 type="button"
                 data-language="hu"
                 role="option"
+                aria-selected="true"
               >
                 <span>🇭🇺</span>
                 <span>Magyar</span>
@@ -832,6 +1052,7 @@
                 type="button"
                 data-language="en"
                 role="option"
+                aria-selected="false"
               >
                 <span>🇬🇧</span>
                 <span>English</span>
@@ -844,6 +1065,7 @@
                 type="button"
                 data-language="de"
                 role="option"
+                aria-selected="false"
               >
                 <span>🇩🇪</span>
                 <span>Deutsch</span>
@@ -856,6 +1078,7 @@
                 type="button"
                 data-language="es"
                 role="option"
+                aria-selected="false"
               >
                 <span>🇪🇸</span>
                 <span>Español</span>
@@ -870,14 +1093,16 @@
 
 
         <div class="settings-info">
+
           <div class="settings-info-icon">
             <i class="fa-solid fa-lightbulb"></i>
           </div>
 
           <p data-i18n="settings_info">
-            A választott nyelv és téma automatikusan elmentődik
-            ezen az eszközön.
+            A választott nyelv és téma automatikusan
+            elmentődik ezen az eszközön.
           </p>
+
         </div>
 
       </div>
